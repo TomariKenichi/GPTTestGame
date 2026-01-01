@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three.js ステルス迷路バトル</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #0e0f14;
+        color: #e4e7ec;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      #ui {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      #info {
+        position: absolute;
+        left: 16px;
+        top: 16px;
+        padding: 12px 14px;
+        background: rgba(12, 16, 26, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+
+      #info h1 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      #info p {
+        margin: 4px 0;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      #legend {
+        display: flex;
+        gap: 12px;
+        margin-top: 8px;
+        flex-wrap: wrap;
+      }
+
+      .legend-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: #c7cedb;
+      }
+
+      .legend-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ui">
+      <div id="info">
+        <h1>ステルス迷路バトル: NPC A vs B</h1>
+        <p>自動生成された32×32迷路で、互いに背後を取り合う2体のNPCが行動します。</p>
+        <div id="legend">
+          <span class="legend-item"><span class="legend-color" style="background:#4cd964"></span>NPC A</span>
+          <span class="legend-item"><span class="legend-color" style="background:#ff5e57"></span>NPC B</span>
+          <span class="legend-item"><span class="legend-color" style="background:#6ec1ff"></span>視界円錐</span>
+          <span class="legend-item"><span class="legend-color" style="background:#d3a4ff"></span>探索ターゲット</span>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
